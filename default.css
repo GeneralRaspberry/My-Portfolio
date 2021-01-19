@@ -1,6 +1,6 @@
 :root{
   --mainColor:#eaeaea;
-  --secondaryColor:fff;
+  --secondaryColor:#fff;
 
   --borderColor:#c1c1c1;
 
@@ -14,13 +14,13 @@ html, body{
   margin: 0;
 }
 h1, h2, h3, h4, h5, h6, strong{
-color:var(--mainText);
-font-family: 'Russo One', sans-serif;
-font-weight: 500;
+  color:var(--mainText);
+  font-family: 'Russo One', sans-serif;
+  font-weight: 500;
 }
 p, li, span, label, input, textarea{
   font-family: 'Roboto', sans-serif;
-color:var(--secondaryText);
+  color:var(--secondaryText);
 }
 
 a{
@@ -59,16 +59,54 @@ h6 {font-size: 16px;}
   display: grid;
   text-align: center;
   align-content: center;
-  border: 2px dashed lightcoral;
   min-height: 10em;
 }
 
 .intro-wrapper{
   background-color: var(--secondaryColor);
   border: 1px solid var(--borderColor);
-  -webkit-box-shadow: 16px 5px 25px -4px rgba(0,0,0,0.74);
-  box-shadow: 16px 5px 25px -4px rgba(0,0,0,0.74);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 5px 5px 15px -7px #000000;
+  box-shadow: 5px 5px 15px -7px #000000;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3em 30em;
+  grid-template-areas:
+  'nav-wrapper nav-wrapper'
+  'left-column right-column';
 }
+
+.nav-wrapper{
+  grid-area: nav-wrapper;
+  border-bottom: 1px solid var(--borderColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dots-wrapper{
+
+}
+
+.browser-dot{
+background-color: black;
+height: 15px;
+width: 15px;
+border-radius: 50%;
+-webkit-box-shadow: 5px 5px 15px -7px #000000;
+box-shadow: 5px 5px 15px -7px #000000;
+}
+
+.left-column{
+  grid-area: left-column;
+}
+
+.right-column{
+  grid-area: right-column;
+
+}
+
 @media screen and (max-width: 1200px){
   .main-container{
     width 95%;
